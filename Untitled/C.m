@@ -39,7 +39,8 @@
 	[self.navigationController
 	 pushViewController:aView animated:YES];
 	 [aView release];
-	 }
+
+}
 
 	 
 -(IBAction) gotoB{
