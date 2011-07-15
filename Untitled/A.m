@@ -7,35 +7,24 @@
 //
 
 #import "A.h"
-
+#import "B.h"
+#import "C.h"
 
 @implementation A
 
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
+-(IBAction) gotoB {
+	B *bView = [[B alloc]
+				initWithNibName:@"B" bundle:nil];
+	[self.navigationController pushViewController:bView animated:YES];
+	[bView release];
 }
-*/
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(IBAction) gotoC {
+	C *cView = [[C alloc]
+				initWithNibName:@"C" bundle:nil];
+	[self.navigationController pushViewController:cView animated:YES];
+	[cView release];
 }
-*/
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
