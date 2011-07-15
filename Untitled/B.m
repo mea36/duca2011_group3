@@ -7,9 +7,21 @@
 //
 
 #import "B.h"
+#import "C.h"
+#import "A.h"
 
 
 @implementation B
+-(IBAction) gotoA{
+	A * aView= [[A alloc]initWithNibName:@"A" bundle:nil];
+	[self.navigationController pushViewController:aView animated:YES];
+	[aView release];
+}
+-(IBAction) gotoC{
+	C * cView= [[C alloc]initWithNibName:@"C" bundle:nil];
+	[self.navigationController pushViewController:cView animated:YES];
+	[cView release];
+}
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
