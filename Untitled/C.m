@@ -37,7 +37,7 @@
 	A *aView = [[A alloc]
 				initWithNibName:@"A" bundle:nil];
 	[self.navigationController
-	 pushViewController:aView animated:YES;
+	 pushViewController:aView animated:YES];
 	 [aView release];
 	 }
 
@@ -46,7 +46,7 @@
 	B *bView = [[B alloc]
 				initWithNibName:@"B" bundle:nil];
 	[self.navigationController
-	 pushViewController:bView animated:YES;
+	 pushViewController:bView animated:YES];
 	 [bView release];
 	 }
 

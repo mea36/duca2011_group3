@@ -12,6 +12,6 @@
 @interface B : UIViewController {
 
 }
--(IBAction) gotoA;
--(IBAction) gotoC;
+-(IBAction) goto A;
+-(IBAction) goto C;
 @end
