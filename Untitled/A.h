@@ -13,4 +13,7 @@
 
 }
 
+-(IBAction) gotoB;
+-(IBAction) gotoC;
+
 @end
