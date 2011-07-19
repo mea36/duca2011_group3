@@ -11,7 +11,7 @@
 @class RootViewController;
 
 @interface BoomP2AppDelegate : NSObject <UIApplicationDelegate> {
-	UIWindow			*window;
+	UIWindow			*startscreen;
 	RootViewController	*viewController;
 }
 
