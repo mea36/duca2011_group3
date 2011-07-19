@@ -12,6 +12,10 @@
 #import "GameConfig.h"
 #import "HelloWorldLayer.h"
 #import "RootViewController.h"
+#import "OptionScreen.h"
+
+
+
 
 @implementation BoomP2AppDelegate
 
@@ -110,7 +114,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+	[[CCDirector sharedDirector] runWithScene: [OptionScreen scene]];
 }
 
 
