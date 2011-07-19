@@ -114,7 +114,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [OptionScreen scene]];
+	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
 }
 
 
