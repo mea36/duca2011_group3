@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 
-@interface Helpscreen : NSObject {
+@interface Helpscreen : CCLayer {
 
 }
++(id) scene;
 
 @end
