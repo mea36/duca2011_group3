@@ -12,9 +12,7 @@
 #import "GameConfig.h"
 #import "HelloWorldLayer.h"
 #import "RootViewController.h"
-#import "OptionScreen.h"
 #import "startscreen.h"
-
 
 @implementation BoomP2AppDelegate
 
