@@ -14,7 +14,10 @@
 @interface HelloWorldLayer : CCLayerColor //change to CCLayer when using backgrond pic
 {
 	CCSprite *_player;
-	float _playerPointsPerSecY;
+	float _playerPointsPerSecX;
+	NSMutableArray *_enemy;
+	NSMutableArray *_projectile;
+	int currTime;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
