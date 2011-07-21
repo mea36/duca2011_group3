@@ -31,6 +31,13 @@
 -(void)spriteMoveFinished:(id)sender {
 	
 	CCSprite *sprite = (CCSprite *)sender;
+	
+	if (sprite.tag == 1) { // target
+		[_enemy removeObject:sprite];
+	} else if (sprite.tag == 2) { // projectile
+		[_projectile removeObject:sprite];
+	}
+	
 	[self removeChild:sprite cleanup:YES];
 }
 
@@ -62,6 +69,9 @@
 											 selector:@selector(spriteMoveFinished:)];
 	[enemy runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
 	
+	enemy.tag = 1;
+	[_enemy addObject:enemy];
+	
 }
 // on "init" you need to initialize your instance
 -(id) init
@@ -77,12 +87,22 @@
 		[self addChild:_player];
 	}
 	
+	int currTime = 0;
+	
+	_enemy = [[NSMutableArray alloc] init];
+	_projectile = [[NSMutableArray alloc] init];
+	
 	self.isTouchEnabled = YES;
 	self.isAccelerometerEnabled = YES;
 	[self scheduleUpdate];
 	[self schedule:@selector(gameLogic:) interval:1.0];
+	[self schedule:@selector(update:)];
 	return self;
 }
+
+//Remove all enemies on the screen (use a nuke!)
+//- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//... 
 
 -(void)gameLogic:(ccTime)dt {[self addEnemy];}
 
@@ -109,19 +129,85 @@
     float accelFraction = accelDiff / kMaxDiffX;
     float pointsPerSec = kShipMaxPointsPerSec * accelFraction;
 	
-    _playerPointsPerSecY = pointsPerSec;
+    _playerPointsPerSecX = pointsPerSec;
 	
 }
 
 - (void)update:(ccTime)dt {
 	
-	CGSize winSize = [CCDirector sharedDirector].winSize;
-	float maxY = winSize.height - _player.contentSize.height/2;
-	float minY = _player.contentSize.height/2;
+
+//  uncomment for accelerometer
+//	float maxX = winSize.width - _player.contentSize.width/2;
+//	float minX = _player.contentSize.width/2;
 	
-	float newY = _player.position.y + (_playerPointsPerSecY * dt);
-	newY = MIN(MAX(newY, minY), maxY);
-	_player.position = ccp(_player.position.x, newY);
+//	float newX = _player.position.x + (_playerPointsPerSecX * dt);
+//	newX = MIN(MAX(newX, minX), maxX);
+//	_player.position = ccp(_player.position.x, newX);
+	CGSize winSize = [CCDirector sharedDirector].winSize;
+	
+	currTime ++;
+	if (currTime%35 == 0) {
+
+	//shoot bullets
+	CCSprite *projectile = [CCSprite spriteWithFile:@"bullet.gif"];
+	projectile.position = ccp(_player.position.x, (winSize.height * 0.1) + (_player.contentSize.height/2));
+	
+	[self addChild:projectile];
+	
+	CGPoint realDest = ccp(_player.position.x, winSize.height);
+	
+	float length = winSize.height - 10;
+	float velocity = 480/1;
+	float realMoveDuration = length/velocity;
+	
+	[projectile runAction:[CCSequence actions:
+						   [CCMoveTo actionWithDuration:realMoveDuration position:realDest],
+						   [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveFinished:)],
+						   nil]];
+	
+	projectile.tag = 2;
+	[_projectile addObject:projectile];
+		currTime = 0;
+	}
+	
+	NSMutableArray *projectileToDelete = [[NSMutableArray alloc] init];
+	for (CCSprite *projectile in _projectile) {
+		CGRect projectileRect = CGRectMake(
+										   projectile.position.x - (projectile.contentSize.width/2), 
+										   projectile.position.y - (projectile.contentSize.height/2), 
+										   projectile.contentSize.width, 
+										   projectile.contentSize.height);
+		
+		NSMutableArray *enemyToDelete = [[NSMutableArray alloc] init];
+		for (CCSprite *enemy in _enemy) {
+			CGRect enemyRect = CGRectMake(
+										  enemy.position.x - (enemy.contentSize.width/2), 
+										  enemy.position.y - (enemy.contentSize.height/2), 
+										  enemy.contentSize.width, 
+										  enemy.contentSize.height);
+			
+			if (CGRectIntersectsRect(projectileRect, enemyRect)) {
+				[enemyToDelete addObject:enemy];				
+			}						
+		}
+		
+		for (CCSprite *enemy in enemyToDelete) {
+			[_enemy removeObject:enemy];
+			[self removeChild:enemy cleanup:YES];									
+		}
+		
+		if (enemyToDelete.count > 0) {
+			[projectileToDelete addObject:projectile];
+		}
+		[enemyToDelete release];
+	}
+	
+	for (CCSprite *projectile in projectileToDelete) {
+		[_projectile removeObject:projectile];
+		[self removeChild:projectile cleanup:YES];
+	}
+	
+	[projectileToDelete release];
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -132,6 +218,10 @@
 	// cocos2d will automatically release all the children (Label)
 	
 	// don't forget to call "super dealloc"
+	[_enemy release];
+	_enemy = nil;
+	[_projectile release];
+	_projectile = nil;
 	[super dealloc];
 }
 @end
