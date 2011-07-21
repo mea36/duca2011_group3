@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "startscreen.h"
 
 @interface RootViewController : UIViewController {
-
+	startscreen *startscreen;
 }
+@property(nonatomic, retain) startscreen *startscreen;
 
 @end
