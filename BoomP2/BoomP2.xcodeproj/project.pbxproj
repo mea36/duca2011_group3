@@ -51,6 +51,19 @@
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
 		5254A20413D603DE005D19CE /* startscreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 5254A20313D603DE005D19CE /* startscreen.m */; };
 		5254A25A13D60785005D19CE /* startscreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5254A25913D60785005D19CE /* startscreen.xib */; };
+		52B2FC9913D7C92C00223C43 /* Startbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B2FC9813D7C92C00223C43 /* Startbtn.png */; };
+		52B2FC9B13D7C93900223C43 /* Startbtnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B2FC9A13D7C93900223C43 /* Startbtnselected.png */; };
+		52B2FCCD13D7D05F00223C43 /* Optionbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B2FCCC13D7D05F00223C43 /* Optionbtn.png */; };
+		52B2FCCF13D7D06800223C43 /* Optionbtnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B2FCCE13D7D06800223C43 /* Optionbtnselected.png */; };
+		52B2FCFE13D7D65800223C43 /* Help.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B2FCFD13D7D65800223C43 /* Help.png */; };
+		52C4461713D6246D00D4646D /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C4461613D6246D00D4646D /* enemy.png */; };
+		52C4461913D6247500D4646D /* Player.gif in Resources */ = {isa = PBXBuildFile; fileRef = 52C4461813D6247500D4646D /* Player.gif */; };
+		52C4463C13D65E3500D4646D /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C4463B13D65E3500D4646D /* startButton.png */; };
+		52C4463E13D65E5400D4646D /* startButtonSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C4463D13D65E5400D4646D /* startButtonSelected.png */; };
+		52CC318313D85E8D00F8FDA7 /* Helpselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 52CC318213D85E8D00F8FDA7 /* Helpselected.png */; };
+		52CC31A113D8634600F8FDA7 /* Hiscoreselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 52CC31A013D8634600F8FDA7 /* Hiscoreselected.png */; };
+		52CC31A313D8635100F8FDA7 /* Hiscore.png in Resources */ = {isa = PBXBuildFile; fileRef = 52CC31A213D8635100F8FDA7 /* Hiscore.png */; };
+		52CC31AD13D8642E00F8FDA7 /* Helpscreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CC31AC13D8642E00F8FDA7 /* Helpscreen.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -298,6 +311,20 @@
 		5254A20213D603DE005D19CE /* startscreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = startscreen.h; sourceTree = "<group>"; };
 		5254A20313D603DE005D19CE /* startscreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = startscreen.m; sourceTree = "<group>"; };
 		5254A25913D60785005D19CE /* startscreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = startscreen.xib; sourceTree = "<group>"; };
+		52B2FC9813D7C92C00223C43 /* Startbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Startbtn.png; sourceTree = "<group>"; };
+		52B2FC9A13D7C93900223C43 /* Startbtnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Startbtnselected.png; sourceTree = "<group>"; };
+		52B2FCCC13D7D05F00223C43 /* Optionbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Optionbtn.png; sourceTree = "<group>"; };
+		52B2FCCE13D7D06800223C43 /* Optionbtnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Optionbtnselected.png; sourceTree = "<group>"; };
+		52B2FCFD13D7D65800223C43 /* Help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Help.png; sourceTree = "<group>"; };
+		52C4461613D6246D00D4646D /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy.png; path = ../enemy.png; sourceTree = SOURCE_ROOT; };
+		52C4461813D6247500D4646D /* Player.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Player.gif; path = ../Player.gif; sourceTree = SOURCE_ROOT; };
+		52C4463B13D65E3500D4646D /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton.png; sourceTree = "<group>"; };
+		52C4463D13D65E5400D4646D /* startButtonSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButtonSelected.png; sourceTree = "<group>"; };
+		52CC318213D85E8D00F8FDA7 /* Helpselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Helpselected.png; sourceTree = "<group>"; };
+		52CC31A013D8634600F8FDA7 /* Hiscoreselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hiscoreselected.png; sourceTree = "<group>"; };
+		52CC31A213D8635100F8FDA7 /* Hiscore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hiscore.png; sourceTree = "<group>"; };
+		52CC31AB13D8642E00F8FDA7 /* Helpscreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpscreen.h; sourceTree = "<group>"; };
+		52CC31AC13D8642E00F8FDA7 /* Helpscreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpscreen.m; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -588,6 +615,8 @@
 				1F3B9A2B0EF2145700286867 /* BoomP2AppDelegate.m */,
 				5254A20213D603DE005D19CE /* startscreen.h */,
 				5254A20313D603DE005D19CE /* startscreen.m */,
+				52CC31AB13D8642E00F8FDA7 /* Helpscreen.h */,
+				52CC31AC13D8642E00F8FDA7 /* Helpscreen.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -657,12 +686,24 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				52C4463B13D65E3500D4646D /* startButton.png */,
+				52C4463D13D65E5400D4646D /* startButtonSelected.png */,
+				52B2FC9813D7C92C00223C43 /* Startbtn.png */,
+				52B2FCCE13D7D06800223C43 /* Optionbtnselected.png */,
+				52CC318213D85E8D00F8FDA7 /* Helpselected.png */,
+				52CC31A013D8634600F8FDA7 /* Hiscoreselected.png */,
+				52CC31A213D8635100F8FDA7 /* Hiscore.png */,
+				52B2FCFD13D7D65800223C43 /* Help.png */,
 				E02BB762126CC1E0006E46A2 /* iTunesArtwork */,
+				52B2FCCC13D7D05F00223C43 /* Optionbtn.png */,
+				52B2FC9A13D7C93900223C43 /* Startbtnselected.png */,
 				E02BB4FE126CA50F006E46A2 /* Icon@2x.png */,
 				E02BB4FF126CA50F006E46A2 /* Icon-Small@2x.png */,
 				E02BB500126CA50F006E46A2 /* Icon-Small.png */,
+				52C4461813D6247500D4646D /* Player.gif */,
 				E02BB501126CA50F006E46A2 /* Icon-Small-50.png */,
 				E02BB502126CA50F006E46A2 /* Icon-72.png */,
+				52C4461613D6246D00D4646D /* enemy.png */,
 				50F414EC1069373D002A0D5E /* Default.png */,
 				50F414ED1069373D002A0D5E /* fps_images.png */,
 				50F414EE1069373D002A0D5E /* Icon.png */,
@@ -1106,6 +1147,18 @@
 				E02BB508126CA50F006E46A2 /* Icon-72.png in Resources */,
 				E02BB763126CC1E0006E46A2 /* iTunesArtwork in Resources */,
 				5254A25A13D60785005D19CE /* startscreen.xib in Resources */,
+				52C4461713D6246D00D4646D /* enemy.png in Resources */,
+				52C4461913D6247500D4646D /* Player.gif in Resources */,
+				52C4463C13D65E3500D4646D /* startButton.png in Resources */,
+				52C4463E13D65E5400D4646D /* startButtonSelected.png in Resources */,
+				52B2FC9913D7C92C00223C43 /* Startbtn.png in Resources */,
+				52B2FC9B13D7C93900223C43 /* Startbtnselected.png in Resources */,
+				52B2FCCD13D7D05F00223C43 /* Optionbtn.png in Resources */,
+				52B2FCCF13D7D06800223C43 /* Optionbtnselected.png in Resources */,
+				52B2FCFE13D7D65800223C43 /* Help.png in Resources */,
+				52CC318313D85E8D00F8FDA7 /* Helpselected.png in Resources */,
+				52CC31A113D8634600F8FDA7 /* Hiscoreselected.png in Resources */,
+				52CC31A313D8635100F8FDA7 /* Hiscore.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1121,6 +1174,7 @@
 				506EDC31102F528A00A389B3 /* HelloWorldLayer.m in Sources */,
 				E0F80F60120A0182005866B8 /* RootViewController.m in Sources */,
 				5254A20413D603DE005D19CE /* startscreen.m in Sources */,
+				52CC31AD13D8642E00F8FDA7 /* Helpscreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
