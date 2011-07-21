@@ -49,6 +49,10 @@
 		50F414F01069373D002A0D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EC1069373D002A0D5E /* Default.png */; };
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
+		521EBF3B13D8A07000E4AA55 /* bullet.gif in Resources */ = {isa = PBXBuildFile; fileRef = 521EBF3A13D8A07000E4AA55 /* bullet.gif */; };
+		521EBF8113D8A5E500E4AA55 /* soundOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 521EBF7F13D8A5E500E4AA55 /* soundOff.png */; };
+		521EBF8213D8A5E500E4AA55 /* soundOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 521EBF8013D8A5E500E4AA55 /* soundOn.png */; };
+		521EBF9513D8A7D000E4AA55 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 521EBF9413D8A7D000E4AA55 /* background-music-aac.caf */; };
 		52BB3FE913D606440051EFB5 /* OptionScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BB3FE813D606440051EFB5 /* OptionScreen.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
@@ -294,6 +298,10 @@
 		50F414ED1069373D002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F414EE1069373D002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		521EBF3A13D8A07000E4AA55 /* bullet.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bullet.gif; sourceTree = "<group>"; };
+		521EBF7F13D8A5E500E4AA55 /* soundOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundOff.png; sourceTree = "<group>"; };
+		521EBF8013D8A5E500E4AA55 /* soundOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundOn.png; sourceTree = "<group>"; };
+		521EBF9413D8A7D000E4AA55 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-music-aac.caf"; path = "../../Cocos2dSimpleGame/Resources/background-music-aac.caf"; sourceTree = SOURCE_ROOT; };
 		52BB3FE713D606440051EFB5 /* OptionScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionScreen.h; sourceTree = "<group>"; };
 		52BB3FE813D606440051EFB5 /* OptionScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionScreen.m; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -660,7 +668,11 @@
 				E02BB500126CA50F006E46A2 /* Icon-Small.png */,
 				E02BB501126CA50F006E46A2 /* Icon-Small-50.png */,
 				E02BB502126CA50F006E46A2 /* Icon-72.png */,
+				521EBF9413D8A7D000E4AA55 /* background-music-aac.caf */,
+				521EBF3A13D8A07000E4AA55 /* bullet.gif */,
 				50F414EC1069373D002A0D5E /* Default.png */,
+				521EBF7F13D8A5E500E4AA55 /* soundOff.png */,
+				521EBF8013D8A5E500E4AA55 /* soundOn.png */,
 				50F414ED1069373D002A0D5E /* fps_images.png */,
 				50F414EE1069373D002A0D5E /* Icon.png */,
 				50F414EF1069373D002A0D5E /* Info.plist */,
@@ -1102,6 +1114,10 @@
 				E02BB507126CA50F006E46A2 /* Icon-Small-50.png in Resources */,
 				E02BB508126CA50F006E46A2 /* Icon-72.png in Resources */,
 				E02BB763126CC1E0006E46A2 /* iTunesArtwork in Resources */,
+				521EBF3B13D8A07000E4AA55 /* bullet.gif in Resources */,
+				521EBF8113D8A5E500E4AA55 /* soundOff.png in Resources */,
+				521EBF8213D8A5E500E4AA55 /* soundOn.png in Resources */,
+				521EBF9513D8A7D000E4AA55 /* background-music-aac.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
