@@ -60,13 +60,13 @@
 		[menuLayer addChild: hiscorescreen];
 		
 		
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	//	Image *player = [Image Image:@"Hiscore.png" ];
 	//	player.position = ccp(0, -180);
-=======
+//=======
 		//Image *player = [Image Image:@"Hiscore.png" ];
 		//player.position = ccp(0, -180);
->>>>>>> d0bebcb70c4117d1ee9426a01cef65a4e406d8cf
+//>>>>>>> d0bebcb70c4117d1ee9426a01cef65a4e406d8cf
 		
 	}
 	return self;
