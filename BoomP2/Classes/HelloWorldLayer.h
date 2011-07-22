@@ -11,13 +11,16 @@
 #import "cocos2d.h"
 
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayerColor //change to CCLayer when using backgrond pic
+@interface HelloWorldLayer : CCLayer //change to CCLayer when using backgrond pic
 {
+	BOOL isMusicOn;
 	CCSprite *_player;
+	CCSprite *bg;
 	float _playerPointsPerSecX;
 	NSMutableArray *_enemy;
 	NSMutableArray *_projectile;
 	int currTime;
+	int _projectilesDestroyed;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
