@@ -20,13 +20,7 @@
 	CCScene *scene = [CCScene node];
 	startscreen *layer =[startscreen node];
 	[scene addChild: layer];
-	
-	
-	
 
-
-
-	
 	return scene;
 }
 
@@ -66,8 +60,13 @@
 		[menuLayer addChild: hiscorescreen];
 		
 		
+<<<<<<< HEAD
 	//	Image *player = [Image Image:@"Hiscore.png" ];
 	//	player.position = ccp(0, -180);
+=======
+		//Image *player = [Image Image:@"Hiscore.png" ];
+		//player.position = ccp(0, -180);
+>>>>>>> d0bebcb70c4117d1ee9426a01cef65a4e406d8cf
 		
 	}
 	return self;
@@ -82,7 +81,7 @@
 }
 -(void) startHelp: (id) sender
 {
-	[[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
+	[[CCDirector sharedDirector] replaceScene:[Helpscreen scene]];
 }
 -(void) startHiscore: (id) sender
 {

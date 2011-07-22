@@ -1,9 +1,9 @@
 //
-//  HelloWorldLayer.m
-//  BoomP2
+// HelloWorldLayer.m
+// BoomP2
 //
-//  Created by CS Admin on 7/19/11.
-//  Copyright __MyCompanyName__ 2011. All rights reserved.
+// Created by CS Admin on 7/19/11.
+// Copyright __MyCompanyName__ 2011. All rights reserved.
 //
 
 
@@ -69,9 +69,9 @@
 	int actualDuration = (arc4random() % rangeDuration) + minDuration;
 	
 	//and........ ACTION!
-	id actionMove = [CCMoveTo actionWithDuration:actualDuration 
+	id actionMove = [CCMoveTo actionWithDuration:actualDuration
 										position:ccp(actualX, enemy.contentSize.height/2)];
-	id actionMoveDone = [CCCallFuncN actionWithTarget:self 
+	id actionMoveDone = [CCCallFuncN actionWithTarget:self
 											 selector:@selector(spriteMoveFinished:)];
 	[enemy runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
 	
@@ -84,7 +84,12 @@
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
+<<<<<<< HEAD
 	if( (self = [super init])) {
+=======
+	// if( (self = [super init])) { //uncomment at start and delete line below for background pic
+	if( (self=[super initWithColor:ccc4(255,255,255,255)] )) {
+>>>>>>> d0bebcb70c4117d1ee9426a01cef65a4e406d8cf
 		_player = [[CCSprite spriteWithFile:@"Player.gif"] retain];
 		CGSize winSize = [CCDirector sharedDirector].winSize;
 		_player.position = ccp(winSize.width * 0.5, winSize.height * 0.1);
@@ -110,21 +115,20 @@
 
 //Remove all enemies on the screen (use a nuke!)
 //- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-//... 
+//...
 
 -(void)gameLogic:(ccTime)dt {[self addEnemy];}
 
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-	
 #define kFilteringFactor 0.1
 #define kRestAccelX -0.6
-#define kShipMaxPointsPerSec (winSize.height*0.5)        
+#define kShipMaxPointsPerSec (winSize.height*0.5)
 #define kMaxDiffX 0.2
 	
     UIAccelerationValue rollingX, rollingY, rollingZ;
 	
-    rollingX = (acceleration.x * kFilteringFactor) + (rollingX * (1.0 - kFilteringFactor));    
-    rollingY = (acceleration.y * kFilteringFactor) + (rollingY * (1.0 - kFilteringFactor));    
+    rollingX = (acceleration.x * kFilteringFactor) + (rollingX * (1.0 - kFilteringFactor));
+    rollingY = (acceleration.y * kFilteringFactor) + (rollingY * (1.0 - kFilteringFactor));
     rollingZ = (acceleration.z * kFilteringFactor) + (rollingZ * (1.0 - kFilteringFactor));
 	
     float accelX = acceleration.x - rollingX;
@@ -143,38 +147,38 @@
 
 - (void)update:(ccTime)dt {
 	
-
-//  uncomment for accelerometer
-//	float maxX = winSize.width - _player.contentSize.width/2;
-//	float minX = _player.contentSize.width/2;
 	
-//	float newX = _player.position.x + (_playerPointsPerSecX * dt);
-//	newX = MIN(MAX(newX, minX), maxX);
-//	_player.position = ccp(_player.position.x, newX);
+	// uncomment for accelerometer
+	// float maxX = winSize.width - _player.contentSize.width/2;
+	// float minX = _player.contentSize.width/2;
+	
+	// float newX = _player.position.x + (_playerPointsPerSecX * dt);
+	// newX = MIN(MAX(newX, minX), maxX);
+	// _player.position = ccp(_player.position.x, newX);
 	CGSize winSize = [CCDirector sharedDirector].winSize;
 	
 	currTime ++;
 	if (currTime%35 == 0) {
-
-	//shoot bullets
-	CCSprite *projectile = [CCSprite spriteWithFile:@"bullet.gif"];
-	projectile.position = ccp(_player.position.x, (winSize.height * 0.1) + (_player.contentSize.height/2));
-	
-	[self addChild:projectile];
-	
-	CGPoint realDest = ccp(_player.position.x, winSize.height);
-	
-	float length = winSize.height - 10;
-	float velocity = 480/1;
-	float realMoveDuration = length/velocity;
-	
-	[projectile runAction:[CCSequence actions:
-						   [CCMoveTo actionWithDuration:realMoveDuration position:realDest],
-						   [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveFinished:)],
-						   nil]];
-	
-	projectile.tag = 2;
-	[_projectile addObject:projectile];
+		
+		//shoot bullets
+		CCSprite *projectile = [CCSprite spriteWithFile:@"bullet.gif"];
+		projectile.position = ccp(_player.position.x, (winSize.height * 0.1) + (_player.contentSize.height/2));
+		
+		[self addChild:projectile];
+		
+		CGPoint realDest = ccp(_player.position.x, winSize.height);
+		
+		float length = winSize.height - 10;
+		float velocity = 480/1;
+		float realMoveDuration = length/velocity;
+		
+		[projectile runAction:[CCSequence actions:
+							   [CCMoveTo actionWithDuration:realMoveDuration position:realDest],
+							   [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveFinished:)],
+							   nil]];
+		
+		projectile.tag = 2;
+		[_projectile addObject:projectile];
 		currTime = 0;
 		
 //		[[SimpleAudioEngine sharedEngine] playEffect:@"pew-pew-lei.caf"];  //SHOOTING
@@ -183,27 +187,27 @@
 	NSMutableArray *projectileToDelete = [[NSMutableArray alloc] init];
 	for (CCSprite *projectile in _projectile) {
 		CGRect projectileRect = CGRectMake(
-										   projectile.position.x - (projectile.contentSize.width/2), 
-										   projectile.position.y - (projectile.contentSize.height/2), 
-										   projectile.contentSize.width, 
+										   projectile.position.x - (projectile.contentSize.width/2),
+										   projectile.position.y - (projectile.contentSize.height/2),
+										   projectile.contentSize.width,
 										   projectile.contentSize.height);
 		
 		NSMutableArray *enemyToDelete = [[NSMutableArray alloc] init];
 		for (CCSprite *enemy in _enemy) {
 			CGRect enemyRect = CGRectMake(
-										  enemy.position.x - (enemy.contentSize.width/2), 
-										  enemy.position.y - (enemy.contentSize.height/2), 
-										  enemy.contentSize.width, 
+										  enemy.position.x - (enemy.contentSize.width/2),
+										  enemy.position.y - (enemy.contentSize.height/2),
+										  enemy.contentSize.width,
 										  enemy.contentSize.height);
 			
 			if (CGRectIntersectsRect(projectileRect, enemyRect)) {
-				[enemyToDelete addObject:enemy];				
-			}						
+				[enemyToDelete addObject:enemy];
+			}
 		}
 		
 		for (CCSprite *enemy in enemyToDelete) {
 			[_enemy removeObject:enemy];
-			[self removeChild:enemy cleanup:YES];									
+			[self removeChild:enemy cleanup:YES];
 		}
 		
 		if (enemyToDelete.count > 0) {
@@ -235,3 +239,4 @@
 	[super dealloc];
 }
 @end
+
