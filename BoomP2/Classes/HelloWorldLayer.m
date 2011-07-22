@@ -8,7 +8,9 @@
 
 
 // Import the interfaces
+#import "Enemy.h"
 #import "HelloWorldLayer.h"
+//#import "SimpleAudioEngine.h"        //MUSIC
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -43,7 +45,11 @@
 
 -(void)addEnemy {
 	
-	CCSprite *enemy = [CCSprite spriteWithFile:@"enemy.png"];
+	Enemy *enemy = nil;
+	if ((arc4random() % 2) == 0) {enemy = [redEnemy enemy];}
+	else if ((arc4random() % 3) == 0) {enemy = [greenEnemy enemy];}
+	else if ((arc4random() % 5) == 0) {enemy = [yellowEnemy enemy];}
+	else {enemy = [blueEnemy enemy];}
 	
 	//spawn location
 	CGSize winSize = [[CCDirector sharedDirector] winSize];
@@ -57,8 +63,8 @@
 	[self addChild:enemy];
 	
 	//speed of enemy (TESTING PURPOSES)
-	int minDuration = 2.0;
-	int maxDuration = 4.0;
+	int minDuration = enemy.minMoveDuration;
+	int maxDuration = enemy.maxMoveDuration; 
 	int rangeDuration = maxDuration - minDuration;
 	int actualDuration = (arc4random() % rangeDuration) + minDuration;
 	
@@ -78,16 +84,25 @@
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
+<<<<<<< HEAD
 //	if( (self = [super init])) { //uncomment at start and delete line below for background pic
+=======
+<<<<<<< HEAD
+	if( (self = [super init])) {
+=======
+	// if( (self = [super init])) { //uncomment at start and delete line below for background pic
+>>>>>>> f6f05de7cb38750c5b0118d453a0ca02763b8f9b
 	if( (self=[super initWithColor:ccc4(255,255,255,255)] )) {
+>>>>>>> d0bebcb70c4117d1ee9426a01cef65a4e406d8cf
 		_player = [[CCSprite spriteWithFile:@"Player.gif"] retain];
 		CGSize winSize = [CCDirector sharedDirector].winSize;
 		_player.position = ccp(winSize.width * 0.5, winSize.height * 0.1);
 		
 		[self addChild:_player];
 	}
-	
-	int currTime = 0;
+	bg = [[CCSprite spriteWithFile:@"bg.png"] retain];
+	bg.position = ccp(160,240);
+	[self addChild:bg z:-1];
 	
 	_enemy = [[NSMutableArray alloc] init];
 	_projectile = [[NSMutableArray alloc] init];
@@ -97,6 +112,8 @@
 	[self scheduleUpdate];
 	[self schedule:@selector(gameLogic:) interval:1.0];
 	[self schedule:@selector(update:)];
+	
+//	[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background-music-aac.caf"];   //BACKGROUND MUSIC
 	return self;
 }
 
@@ -120,8 +137,8 @@
     rollingZ = (acceleration.z * kFilteringFactor) + (rollingZ * (1.0 - kFilteringFactor));
 	
     float accelX = acceleration.x - rollingX;
-    float accelY = acceleration.y - rollingY;
-    float accelZ = acceleration.z - rollingZ;
+//    float accelY = acceleration.y - rollingY;
+//    float accelZ = acceleration.z - rollingZ;
 	
     CGSize winSize = [CCDirector sharedDirector].winSize;
 	
@@ -168,6 +185,8 @@
 	projectile.tag = 2;
 	[_projectile addObject:projectile];
 		currTime = 0;
+		
+//		[[SimpleAudioEngine sharedEngine] playEffect:@"pew-pew-lei.caf"];  //SHOOTING
 	}
 	
 	NSMutableArray *projectileToDelete = [[NSMutableArray alloc] init];

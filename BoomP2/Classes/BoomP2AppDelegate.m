@@ -12,11 +12,13 @@
 #import "GameConfig.h"
 #import "HelloWorldLayer.h"
 #import "RootViewController.h"
-#import "OptionScreen.h"
 #import "startscreen.h"
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f6f05de7cb38750c5b0118d453a0ca02763b8f9b
 @implementation BoomP2AppDelegate
 
 @synthesize window;
