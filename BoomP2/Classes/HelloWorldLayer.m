@@ -85,7 +85,7 @@
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self = [super init])) {
-		_player = [[CCSprite spriteWithFile:@"Player.gif"] retain];
+		_player = [[CCSprite spriteWithFile:@"player.png"] retain];
 		CGSize winSize = [CCDirector sharedDirector].winSize;
 		_player.position = ccp(winSize.width * 0.5, winSize.height * 0.1);
 		bg = [[CCSprite spriteWithFile:@"bg.png"] retain];
@@ -117,7 +117,7 @@
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
 	
 #define kFilteringFactor 0.1
-#define kRestAccelX -0.6
+#define kRestAccelX -0.0
 #define kShipMaxPointsPerSec (winSize.height*0.5)        
 #define kMaxDiffX 0.2
 	
@@ -143,46 +143,42 @@
 
 - (void)update:(ccTime)dt {
 	
-	_playerPointsPerSecX++;
-	
 		CGSize winSize = [CCDirector sharedDirector].winSize;
 	
 		float maxX = winSize.width - _player.contentSize.width/2;
 		float minX = _player.contentSize.width/2;
-	
 		float newX = _player.position.x + (_playerPointsPerSecX * dt);
 		newX = MIN(MAX(newX, minX), maxX);
 		_player.position = ccp(newX, winSize.height * 0.1);
-		NSLog(@"The player position is (%d,%d)", newX, winSize.height * 0.1);
 
 	
 	currTime ++;
 	if (currTime%35 == 0) {
-		
-		//shoot bullets
-		CCSprite *projectile = [CCSprite spriteWithFile:@"bullet.gif"];
-		projectile.position = ccp(_player.position.x, (winSize.height * 0.1) + (_player.contentSize.height/2));
-		
-		[self addChild:projectile];
-		
-		CGPoint realDest = ccp(_player.position.x, winSize.height);
-		
-		float length = winSize.height - 10;
-		float velocity = 480/1;
-		float realMoveDuration = length/velocity;
-		
-		[projectile runAction:[CCSequence actions:
-							   [CCMoveTo actionWithDuration:realMoveDuration position:realDest],
-							   [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveFinished:)],
-							   nil]];
-		
-		projectile.tag = 2;
-		[_projectile addObject:projectile];
+
+	//shoot bullets
+	CCSprite *projectile = [CCSprite spriteWithFile:@"bullet.gif"];
+	projectile.position = ccp(_player.position.x, (winSize.height * 0.1) + (_player.contentSize.height/2));
+	
+	[self addChild:projectile];
+	
+	CGPoint realDest = ccp(_player.position.x, winSize.height);
+	
+	float length = winSize.height - 10;
+	float velocity = 480/1;
+	float realMoveDuration = length/velocity;
+	
+	[projectile runAction:[CCSequence actions:
+						   [CCMoveTo actionWithDuration:realMoveDuration position:realDest],
+						   [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveFinished:)],
+						   nil]];
+	
+	projectile.tag = 2;
+	[_projectile addObject:projectile];
 		currTime = 0;
 		
 		//		[[SimpleAudioEngine sharedEngine] playEffect:@"pew-pew-lei.caf"];  //SHOOTING
 	}
-	
+//	BOOL enemyHit = FALSE;
 	NSMutableArray *projectileToDelete = [[NSMutableArray alloc] init];
 	for (CCSprite *projectile in _projectile) {
 		CGRect projectileRect = CGRectMake(
@@ -194,10 +190,10 @@
 		NSMutableArray *enemyToDelete = [[NSMutableArray alloc] init];
 		for (CCSprite *enemy in _enemy) {
 			CGRect enemyRect = CGRectMake(
-										  enemy.position.x - (enemy.contentSize.width/2), 
-										  enemy.position.y - (enemy.contentSize.height/2), 
-										  enemy.contentSize.width, 
-										  enemy.contentSize.height);
+										   enemy.position.x - (enemy.contentSize.width/2), 
+										   enemy.position.y - (enemy.contentSize.height/2), 
+										   enemy.contentSize.width, 
+										   enemy.contentSize.height);
 			
 			if (CGRectIntersectsRect(projectileRect, enemyRect)) {
 				[enemyToDelete addObject:enemy];				
@@ -219,10 +215,8 @@
 		[_projectile removeObject:projectile];
 		[self removeChild:projectile cleanup:YES];
 	}
-	
 	[projectileToDelete release];
 }
-
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {

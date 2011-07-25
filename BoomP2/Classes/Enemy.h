@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 
 @interface Enemy : CCSprite {
-    int _currentHealth;
+    int _curHp;
     int _minMoveDuration;
     int _maxMoveDuration;
 }

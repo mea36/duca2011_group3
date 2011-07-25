@@ -1,17 +1,16 @@
 //
-//  Helpscreen.h
+//  OptionScreen.h
 //  BoomP2
 //
-//  Created by CS Admin on 7/21/11.
+//  Created by CS Admin on 7/19/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 
-@interface Helpscreen : CCLayer {
+@interface OptionScreen : NSObject {
 
 }
-+(id) scene;
 
 @end

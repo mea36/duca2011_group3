@@ -12,6 +12,10 @@
 #import "cocos2d.h"
 #import "CCLayer.h"
 #import "Helpscreen.h"
+#import "OptionScreen.h"
+#import "SimpleAudioEngine.h"
+
+
 
 // startscreen implementation
 @implementation startscreen
@@ -20,7 +24,7 @@
 	CCScene *scene = [CCScene node];
 	startscreen *layer =[startscreen node];
 	[scene addChild: layer];
-
+	
 	return scene;
 }
 
@@ -30,6 +34,12 @@
 		CCLabelTTF *title = [CCLabelTTF labelWithString:@"BOOM Part 2" fontName:@"Times New Roman" fontSize:29];
 		title.position =  ccp(150, 440);
 		[self addChild: title];
+		
+		CGSize winSize = [CCDirector sharedDirector].winSize;
+		
+		bg = [[CCSprite spriteWithFile:@"bg.png"] retain];
+		bg.position = ccp(winSize.width/2, winSize.height/2);
+		[self addChild:bg z:-1];
 		
 		CCLayer *menuLayer = [[CCLayer alloc] init];
 		[self addChild:menuLayer];
@@ -59,14 +69,8 @@
 		CCMenu *hiscorescreen = [CCMenu menuWithItems: hiscoreButton, nil];
 		[menuLayer addChild: hiscorescreen];
 		
+		[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background-music-aac.caf"];			
 		
-//<<<<<<< HEAD
-	//	Image *player = [Image Image:@"Hiscore.png" ];
-	//	player.position = ccp(0, -180);
-//=======
-		//Image *player = [Image Image:@"Hiscore.png" ];
-		//player.position = ccp(0, -180);
-//>>>>>>> d0bebcb70c4117d1ee9426a01cef65a4e406d8cf
 		
 	}
 	return self;
@@ -77,7 +81,7 @@
 }
 -(void) startOption: (id) sender
 {
-	[[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
+	[[CCDirector sharedDirector] replaceScene:[OptionScreen scene]];
 }
 -(void) startHelp: (id) sender
 {

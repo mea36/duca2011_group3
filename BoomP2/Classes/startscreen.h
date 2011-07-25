@@ -11,10 +11,12 @@
 
 
 @interface startscreen : CCLayer {
-
+	CCSprite *bg;
+	CCSprite *Player;
 	
 	
 }
+
 +(id) scene;
 
 @end
