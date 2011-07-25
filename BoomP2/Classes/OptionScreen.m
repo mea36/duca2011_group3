@@ -15,8 +15,6 @@
 #import "SimpleAudioEngine.h"
 #import "startscreen.h"
 
-
-
 @implementation OptionScreen 
 
 +(id) scene
@@ -24,12 +22,7 @@
 	CCScene *scene = [CCScene node];
 	OptionScreen *layer = [OptionScreen node];
 	[scene addChild: layer];
-	
-	
-	
-	
-	
-	
+
 	return scene;
 }
 
@@ -38,16 +31,12 @@
 	
 	if( (self=[super init] )) { //buttons titles,labels go here
 		
-		
-		
 		CGSize winSize = [CCDirector sharedDirector].winSize;
 		
 		bg = [[CCSprite spriteWithFile:@"bg.png"] retain];
 		bg.position = ccp(winSize.width/2, winSize.height/2);
 		[self addChild:bg z:-1];
-		
-		
- 		//gfggh
+
 		CCLabelTTF *title = [CCLabelTTF labelWithString:@"Option Screen" fontName:@"Courier" fontSize:16];
 		title.position = ccp(150, 450);
 		[self addChild: title];		
@@ -63,13 +52,7 @@
 		startButton.position = ccp(-120, 180);
 		CCMenu *menu = [CCMenu menuWithItems: startButton, nil];
 		[menuLayer addChild: menu];
-		
-		
-		
-		
-		
-		
-		
+
 		// Sound on/off toggle
 		CCMenuItem *soundOnItem = [CCMenuItemImage itemFromNormalImage:@"soundOn.png"
 														 selectedImage:@"soundOn.png"
@@ -84,22 +67,17 @@
 		CCMenuItemToggle *soundToggleItem = [CCMenuItemToggle itemWithTarget:self
 																	selector:@selector(soundButtonTapped:)
 																	   items:soundOnItem, soundOffItem, nil];		
-		
-		
-		
+
 		CCMenu *bottomMenu = [CCMenu menuWithItems:soundToggleItem, nil];
 		soundToggleItem.position = ccp( -90,-120);
 		[self addChild: bottomMenu z: 10];		
 		//preload music at some point 
-		
-		
 	}
 	return self;
 }
 
 -(void) soundButtonTapped: (id) sender
 {
-	
 	
 	if([CDAudioManager sharedManager].mute == TRUE){
 		[CDAudioManager sharedManager].mute = FALSE;
@@ -110,18 +88,10 @@
 	
 }
 
-
-
-
-
-
-
-
 -(void) startGame: (id)sender
 {
 	[[CCDirector sharedDirector] replaceScene:[startscreen scene]];
 }
-
 
 -(void) dealloc
 {

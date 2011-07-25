@@ -15,8 +15,6 @@
 #import "OptionScreen.h"
 #import "SimpleAudioEngine.h"
 
-
-
 // startscreen implementation
 @implementation startscreen
 +(id) scene
@@ -70,8 +68,6 @@
 		[menuLayer addChild: hiscorescreen];
 		
 		[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background-music-aac.caf"];			
-		
-		
 	}
 	return self;
 }

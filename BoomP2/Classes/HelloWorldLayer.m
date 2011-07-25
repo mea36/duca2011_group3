@@ -6,7 +6,6 @@
 //  Copyright __MyCompanyName__ 2011. All rights reserved.
 //
 
-
 // Import the interfaces
 #import "Enemy.h"
 #import "HelloWorldLayer.h"
@@ -93,7 +92,6 @@
 		[self addChild:bg z:-1];
 		[self addChild:_player];
 	}
-
 	
 	_enemy = [[NSMutableArray alloc] init];
 	_projectile = [[NSMutableArray alloc] init];
@@ -150,7 +148,6 @@
 		float newX = _player.position.x + (_playerPointsPerSecX * dt);
 		newX = MIN(MAX(newX, minX), maxX);
 		_player.position = ccp(newX, winSize.height * 0.1);
-
 	
 	currTime ++;
 	if (currTime%35 == 0) {
