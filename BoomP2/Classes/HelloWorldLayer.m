@@ -286,8 +286,6 @@
 	if (score%100 == 0) {laserUpgrade = YES;}
 	
 	if (score%150 == 0) {laserUpgrade = NO;}
-	
-	if (score == 250) {life++;}
 }
 
 // on "dealloc" you need to release all your retained objects

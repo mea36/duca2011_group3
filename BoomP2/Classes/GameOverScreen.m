@@ -33,7 +33,7 @@
 		
 		CGSize winSize = [CCDirector sharedDirector].winSize;
 		
-		bg = [[CCSprite spriteWithFile:@"bg.png"] retain];
+		bg = [[CCSprite spriteWithFile:@"bggameover.png"] retain];
 		bg.position = ccp(winSize.width/2, winSize.height/2);
 		[self addChild:bg z:-1];
 		
@@ -45,10 +45,6 @@
 		
 		CCMenu *start = [CCMenu menuWithItems: startButton, nil];
 		[menuLayer addChild: start];
-		
-		
-		
-		
     }
     return self;
 }
