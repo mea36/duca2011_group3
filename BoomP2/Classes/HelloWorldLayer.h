@@ -21,6 +21,18 @@
 	NSMutableArray *_projectile;
 	int currTime;
 	int _projectilesDestroyed;
+	int playerHP;
+	int score;
+	int worldHP;
+	int life;
+	CCLabelTTF *scoreLabel;
+	CCLabelTTF *lifeLabel;
+	CCSprite *healthBarEarth;
+	CCSprite *healthBarPlayer;
+	BOOL gunUpgrade;
+	BOOL laserUpgrade;
+	int bulletSpeed;
+	int powerupTime;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

@@ -13,11 +13,13 @@
     int _curHp;
     int _minMoveDuration;
     int _maxMoveDuration;
+	
 }
 
 @property (nonatomic, assign) int hp;
 @property (nonatomic, assign) int minMoveDuration;
 @property (nonatomic, assign) int maxMoveDuration;
+
 
 @end
 

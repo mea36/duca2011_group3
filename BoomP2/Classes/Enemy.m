@@ -7,11 +7,10 @@
 //
 
 #import "Enemy.h"
-
+#import "HelloWorldLayer.h"
 
 @implementation Enemy
-
-@synthesize hp = _currentHealth;
+@synthesize hp = _curHp;
 @synthesize minMoveDuration = _minMoveDuration;
 @synthesize maxMoveDuration = _maxMoveDuration;
 
@@ -24,8 +23,8 @@
     redEnemy *enemy = nil;
     if ((enemy = [[[super alloc] initWithFile:@"redEnemy.png"] autorelease])) {
         enemy.hp = 1;
-        enemy.minMoveDuration = 3;
-        enemy.maxMoveDuration = 5;
+        enemy.minMoveDuration = 2;
+        enemy.maxMoveDuration = 4;
     }
     return enemy;
 	
@@ -39,11 +38,13 @@
 	
     blueEnemy *enemy = nil;
     if ((enemy = [[[super alloc] initWithFile:@"blueEnemy.png"] autorelease])) {
-        enemy.hp = 2;
-        enemy.minMoveDuration = 4;
-        enemy.maxMoveDuration = 8;
-    }
-    return enemy;
+        enemy.minMoveDuration = 2;
+        enemy.maxMoveDuration = 4;
+		enemy.hp = 1;
+	}
+    
+	
+	return enemy;
 	
 }
 
@@ -56,8 +57,8 @@
     greenEnemy *enemy = nil;
     if ((enemy = [[[super alloc] initWithFile:@"greenEnemy.png"] autorelease])) {
         enemy.hp = 3;
-        enemy.minMoveDuration = 5;
-        enemy.maxMoveDuration = 10;
+        enemy.minMoveDuration = 3;
+        enemy.maxMoveDuration = 5;
     }
     return enemy;
 	
@@ -72,8 +73,8 @@
     yellowEnemy *enemy = nil;
     if ((enemy = [[[super alloc] initWithFile:@"yellowEnemy.png"] autorelease])) {
         enemy.hp = 5;
-        enemy.minMoveDuration = 6;
-        enemy.maxMoveDuration = 12;
+        enemy.minMoveDuration = 4;
+        enemy.maxMoveDuration = 6;
     }
     return enemy;
 	

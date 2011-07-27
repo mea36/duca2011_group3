@@ -14,6 +14,7 @@
 #import "Helpscreen.h"
 #import "OptionScreen.h"
 #import "SimpleAudioEngine.h"
+#import "hiscorescreen.h"
 
 // startscreen implementation
 @implementation startscreen
@@ -85,7 +86,7 @@
 }
 -(void) startHiscore: (id) sender
 {
-	[[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
+	[[CCDirector sharedDirector] replaceScene:[hiscorescreen scene]];
 }
 
 -(void) dealloc
