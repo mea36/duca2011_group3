@@ -49,7 +49,7 @@
 		
 		
 		
-		CCLabelTTF  *story = [CCLabelTTF labelWithString:@"Controls: Tilt Screen Left and Right to move your ship. Sound options can be found in the option screen. Story:  " dimensions:CGSizeMake(300, 300) alignment:UITextAlignmentLeft fontName:@"Times New Roman" fontSize:16];
+		CCLabelTTF  *story = [CCLabelTTF labelWithString:@"Controls: Tilt Screen Left and Right to move your ship. Sound options can be found in the option screen. Story: IN A WORLD WHERE ALIENS HAVE SPONTANEOUSLY INVADED: ONE HERO FIGHTS ALONE AGAINST THE MENACING ALIEN SWARM. HIS NAME: ZIGLIOUS, THE OVERPAID WEB DESIGNER. USING HIS MASSIVE WEALTH HE WAS ABLE ESCAPE THE INITIAL ALIEN INVASION ON HIS PRIVATE ISLAND AND BEGAN TO CODE HIS OWN SPACESHIP INTO EXISTENCE. WILL HE BE ABLE TO FIGHT OFF THESE EVIL ALIENS?  " dimensions:CGSizeMake(300, 300) alignment:UITextAlignmentLeft fontName:@"Times New Roman" fontSize:16];
 		[story setPosition: CGPointMake(160,220)];
 		[self addChild: story];   	 
     }
